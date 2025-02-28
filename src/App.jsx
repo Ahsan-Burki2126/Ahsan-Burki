@@ -1,0 +1,29 @@
+import Sidebar from "./components/sidebar";
+import Hero from "./Pages/Hero";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Portfolio from "./Pages/Portfolio";
+import Services from "./Pages/Services";
+import CursorRing from "./components/CursorRing"; // Import CursorRing
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <Router>
+      <div className="flex relative">
+        <CursorRing /> {/* Cursor Ring Component */}
+        <Sidebar />
+        <Routes>
+          <Route index element={<Hero />} /> {/* Default Route */}
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Portfolio />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
