@@ -9,6 +9,12 @@ export default {
         purple: "#af2676",
         white: "#fffffe",
       },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        ubuntu: ["Ubuntu", "sans-serif"],
+        josefin: ["Josefin Sans", "sans-serif"],
+        silkscreen: ["Silkscreen", "cursive"],
+      },
     },
   },
   plugins: [],

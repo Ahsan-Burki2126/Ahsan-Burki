@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Github } from "lucide-react";
 function Sidebar() {
   return (
-    <div className="hidden  h-screen border-l border-red-950 w-[20%] md:flex lg:flex flex-col justify-between bg-dark-blue text-white pt-10 font-mono sticky">
+    <div className="hidden  md:hidden h-screen border-l border-red-950 w-[20%]  lg:flex flex-col justify-between bg-dark-blue text-white pt-10 font-montserrat sticky">
       {/* Logo Section */}
       <div className="logo text-3xl font-bold px-6">
         <a href="./index.html">
