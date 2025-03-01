@@ -1,5 +1,5 @@
 import Sidebar from "./components/sidebar";
-// import Hero from "./Pages/Hero";
+import Hero from "./Pages/Hero";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Portfolio from "./Pages/Portfolio";
@@ -14,8 +14,8 @@ function App() {
         <CursorRing /> {/* Cursor Ring Component */}
         <Sidebar />
         <Routes>
-          {/* <Route index element={<Hero />} /> Default Route */}
-          {/* <Route path="/" element={<Hero />} /> */}
+          <Route index element={<Hero />} />
+          <Route path="/" element={<Hero />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />

@@ -8,21 +8,21 @@ function Sidebar() {
       {/* Logo Section */}
       <div className="logo text-3xl font-bold px-6">
         <a href="./index.html">
-          <h1 className="font-mono">BuRki.</h1>
+          <h1 className="font-londrina text-purple text-5xl">BuRki.</h1>
         </a>
       </div>
 
       {/* Navigation Menu */}
-      <ul className=" flex flex-1 my-20 justify-start gap-6 items-start flex-col">
+      <ul className=" flex flex-1 my-20 justify-start gap-6 items-start flex-col font-ubuntu">
         {navbarData.map((item) => (
-          <li key={item.id} className="w-full">
+          <li key={item.id} className="w-full ">
             <NavLink
               to={item.link}
               className={({ isActive }) =>
                 `relative font-semibold text-2xl px-6 py-2 block transition-all duration-500 ease-in-out ${
                   isActive
-                    ? "text-white before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[80px] before:bg-gradient-to-l before:from-pink-500 before:to-purple-500 before:transition-all before:duration-500 before:scale-100"
-                    : "text-gray-400 before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[0px] before:bg-gradient-to-l before:from-pink-500 before:to-purple-500 before:transition-all before:duration-500 before:scale-0"
+                    ? "text-white before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[80px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-100"
+                    : "text-gray-500 before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[0px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-0"
                 }`
               }
             >

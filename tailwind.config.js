@@ -14,6 +14,7 @@ export default {
         ubuntu: ["Ubuntu", "sans-serif"],
         josefin: ["Josefin Sans", "sans-serif"],
         silkscreen: ["Silkscreen", "cursive"],
+        londrina: ["Londrina Outline", "cursive"],
       },
     },
   },
