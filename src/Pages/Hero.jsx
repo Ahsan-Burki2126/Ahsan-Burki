@@ -13,7 +13,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-screen h-screen flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-br from-blue to-dark-blue text-white px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24">
+    <section className="relative w-screen h-screen flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-br from-blue to-dark-blue text-white px-2 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24">
       {/* Left Content */}
       <div
         className="text-center md:text-left flex-1"
@@ -22,21 +22,21 @@ const Hero = () => {
       >
         <h1 className="text-center md:text-center lg:text-left text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-wide leading-tight font-ubuntu">
           MY NAME <br />
-          is <span className="text-purple font-londrina">AHSAN</span> <br />
-          <span className="text-purple font-londrina">BURKI...</span>
+          is <span className="text-purple font-montserrat">AHSAN</span> <br />
+          <span className="text-purple font-montserrat">BURKI...</span>
         </h1>
         <p className="text-xl md:text-2xl mt-4 font-medium">
           <span className="font-bold text-white">Web Designer</span> based in{" "}
-          <span className=" font-bold text-white">PAKISTAN</span>
+          <span className=" font-bold text-purple">PAKISTAN</span>
         </p>
         {/* Button - Responsive */}
         <div className="mt-6">
-          <button className="bg-gradient-to-r from-purple to-blue   hover:bg-purple text-white px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-md text-sm md:text-lg lg:text-xl font-semibold transition duration-300 flex items-center gap-2 m-auto md:m-auto lg:m-0">
+          <button className="bg-gradient-to-r from-purple to-blue   hover:bg-purple text-white px-6 py-3 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-md text-sm md:text-lg lg:text-xl font-semibold transition duration-300 flex items-center gap-2 m-auto md:m-auto lg:m-0">
             Work with ME →
           </button>
         </div>
         {/* Contact Info */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-center md:justify-start gap-4 md:gap-6 mt-6 text-sm md:text-lg">
+        <div className="hidden md:flex lg:flex flex-col sm:flex-row sm:items-center justify-center md:justify-start gap-4 md:gap-6 mt-6 text-sm md:text-lg">
           <div className="flex items-center gap-2">
             <Phone className="text-purple" size={18} md:size={20} />
             <span>+92 312 9095755</span>
