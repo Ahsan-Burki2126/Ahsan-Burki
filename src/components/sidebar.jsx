@@ -21,7 +21,7 @@ function Sidebar() {
               className={({ isActive }) =>
                 `relative font-semibold text-2xl px-6 py-2 block transition-all duration-500 ease-in-out ${
                   isActive
-                    ? "text-white before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[80px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-100"
+                    ? "bg-gradient-to-r from-purple to-white text-transparent bg-clip-text before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[80px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-100"
                     : "text-gray-500 before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[0px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-0"
                 }`
               }
