@@ -8,12 +8,12 @@ function Sidebar() {
       {/* Logo Section */}
       <div className="logo text-3xl font-bold px-6">
         <a href="./index.html">
-          <h1 className="font-londrina text-purple text-5xl">BuRki.</h1>
+          <h1 className="font-montserrat text-purple text-4xl">BuRki.</h1>
         </a>
       </div>
 
       {/* Navigation Menu */}
-      <ul className=" flex flex-1 my-20 justify-start gap-6 items-start flex-col font-ubuntu">
+      <ul className=" flex flex-1 my-20 justify-start gap-6 items-start flex-col font-mono">
         {navbarData.map((item) => (
           <li key={item.id} className="w-full ">
             <NavLink
@@ -21,8 +21,8 @@ function Sidebar() {
               className={({ isActive }) =>
                 `relative font-semibold text-2xl px-6 py-2 block transition-all duration-500 ease-in-out ${
                   isActive
-                    ? "bg-gradient-to-r from-purple to-white text-transparent bg-clip-text before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[80px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-100"
-                    : "text-gray-500 before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[0px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-0"
+                    ? "text-purple before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[80px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-100"
+                    : "text-gray-300 before:absolute before:right-0 before:top-1/2 before:h-1 before:w-[0px] before:bg-gradient-to-l before:from-purple before:to-blue before:transition-all before:duration-500 before:scale-0"
                 }`
               }
             >

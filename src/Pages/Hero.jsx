@@ -13,17 +13,19 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-screen h-screen flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-br from-blue to-dark-blue text-white px-2 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24">
+    <section className="relative w-screen h-screen flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-br from-blue to-dark-blue text-white px-2 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24 font-mono">
       {/* Left Content */}
       <div className="text-center md:text-left flex-1">
         <h1
-          className="text-center md:text-center lg:text-left text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-wide leading-tight font-ubuntu"
+          className="text-center md:text-center lg:text-left text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-wide leading-tight font-mono"
           data-aos="fade-up"
           data-aos-delay="1000"
         >
           MY NAME <br />
-          is <span className="text-purple font-montserrat">AHSAN</span> <br />
-          <span className="text-purple font-montserrat">BURKI...</span>
+          is <span className="text-purple font-ubuntu">AHSAN</span> <br />
+          <span className="text-purple font-ubuntu">
+            BURKI <span className="font-londrina">...</span>
+          </span>
         </h1>
         <p
           className="text-xl md:text-2xl mt-4 font-medium"

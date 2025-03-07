@@ -28,12 +28,12 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-blue to-dark-blue w-full p-6 sm:p-12 text-white font-ubuntu flex justify-center">
+    <div className="bg-gradient-to-b from-blue to-dark-blue w-full p-6 sm:p-12 text-white font-mono flex justify-center ">
       <div className="max-w-5xl w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:items-stretch gap-12">
         {/* Right Section (Text Content) */}
         <div ref={rightSectionRef} className="flex-1 text-left px-4 sm:px-0">
           <h1
-            className="text-4xl sm:text-6xl text-center lg:text-left font-bold font-montserrat"
+            className="text-4xl sm:text-6xl text-center lg:text-left font-bold font-mono"
             data-aos="fade-right"
             data-aos-delay="700"
           >
