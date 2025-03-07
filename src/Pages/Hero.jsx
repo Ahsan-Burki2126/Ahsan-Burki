@@ -64,7 +64,11 @@ const Hero = () => {
         data-aos="fade-right"
         data-aos-delay="1000"
       >
-        <div className="absolute top-0 left-0 w-40 h-40 md:w-60 md:h-60 lg:w-80 lg:h-80 bg-gradient-to-br from-purple to-blue rounded-full opacity-70 -z-10"></div>
+        {/* Fixed Background Circle Centering */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-48 h-52 md:w-60 md:h-60 lg:w-96 lg:h-96 bg-gradient-to-br from-purple to-blue rounded-full opacity-70 -z-10"></div>
+        </div>
+
         <img
           src={Profile}
           alt="Lilon Macwan"

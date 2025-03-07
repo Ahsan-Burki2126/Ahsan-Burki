@@ -49,7 +49,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold">Chat with us</h3>
                 <p className="text-sm text-gray-400">
-                  help.info@domainname.com
+                  ahsanburki1819@gmail.com
                 </p>
               </div>
             </div>
@@ -60,7 +60,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold">Visit us</h3>
                 <p className="text-sm text-gray-400">
-                  123 Office HQ, New York, USA
+                  Ali Hall ,Baghdad-ul-Jadeed Campus,IUB,Bahawalpur,Pakistan
                 </p>
               </div>
             </div>
@@ -70,7 +70,7 @@ const Contact = () => {
               <Phone size={24} className="text-purple" />
               <div>
                 <h3 className="text-lg font-semibold">Call us</h3>
-                <p className="text-sm text-gray-400">+01 (555) 000-0000</p>
+                <p className="text-sm text-gray-400">+92 312 9095755</p>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ const Contact = () => {
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093673!2d144.95592831531857!3d-37.817209979751554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1e255ab%3A0x5045675218ce7e33!2sVictoria%2C%20Australia!5e0!3m2!1sen!2sus!4v1634853063123!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d674.806278129215!2d71.75155611900914!3d29.376298656816015!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b9139ddaf2389%3A0x1c7b760a89a99a47!2sAli%20Hall%20boys%20Hostel%2C%20IUB!5e0!3m2!1sen!2sus!4v1741382043664!5m2!1sen!2sus://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093673!2d144.95592831531857!3d-37.817209979751554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1e255ab%3A0x5045675218ce7e33!2sVictoria%2C%20Australia!5e0!3m2!1sen!2sus!4v1634853063123!5m2!1sen!2sus"
             ></iframe>
           </div>
         </div>
