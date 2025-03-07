@@ -66,7 +66,7 @@ const Hero = () => {
       >
         {/* Fixed Background Circle Centering */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-48 h-52 md:w-60 md:h-60 lg:w-96 lg:h-96 bg-gradient-to-br from-purple to-blue rounded-full opacity-70 -z-10"></div>
+          <div className="w-40 h-40 md:w-60 md:h-60 lg:w-80 lg:h-80 bg-gradient-to-br from-purple to-blue rounded-full opacity-70 -z-10"></div>
         </div>
 
         <img
