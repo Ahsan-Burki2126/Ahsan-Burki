@@ -68,12 +68,12 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-blue to-dark-blue w-full min-h-screen h-screen flex flex-col justify-center items-center overflow-hidden font-mono">
+    <div className="bg-gradient-to-b from-blue to-dark-blue w-full min-h-screen flex flex-col justify-center items-center overflow-hidden font-mono">
       {/* Scrollable Container */}
-      <div className="w-full h-full max-h-screen overflow-y-auto scrollbar-hide flex flex-col items-center">
+      <div className="w-full max-h-[90vh] overflow-y-auto scrollbar-hide flex flex-col items-center">
         {/* Page Title */}
         <h1
-          className="text-3xl sm:text-5xl font-bold    text-white font-mono  my-8"
+          className="text-3xl sm:text-5xl font-bold text-white font-mono my-8"
           data-aos="zoom-in"
         >
           My <span className="text-purple">Projects</span>
@@ -115,17 +115,6 @@ const Projects = () => {
           ))}
         </div>
       </div>
-
-      {/* Hide Scrollbars */}
-      <style>{`
-        ::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </div>
   );
 };

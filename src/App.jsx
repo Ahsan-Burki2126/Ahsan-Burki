@@ -3,7 +3,7 @@ import Hero from "./Pages/Hero";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Services from "./Pages/Services";
-import FooterNav from "./components/FooterNav";
+// import FooterNav from "./components/FooterNav";
 
 import CursorRing from "./components/CursorRing"; // Import CursorRing
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -23,7 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
-        <FooterNav />
+        {/* <FooterNav /> */}
       </div>
     </Router>
   );

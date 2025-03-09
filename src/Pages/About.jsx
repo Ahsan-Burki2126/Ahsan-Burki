@@ -1,8 +1,7 @@
-import { Mail, MapPin, Phone, CircleUserRound, Download } from "lucide-react";
+import { Mail, MapPin, Phone, Code, Download } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Profile from "../assets/Profile.png";
 
 const About = () => {
   const rightSectionRef = useRef(null);
@@ -28,7 +27,22 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-blue to-dark-blue w-full p-6 sm:p-12 text-white font-mono flex justify-center ">
+    <div className="relative bg-gradient-to-b from-blue to-dark-blue w-full min-h-screen flex justify-center items-center p-6 sm:p-12 text-white font-mono overflow-hidden">
+      {/* Background Floating Text */}
+      {Array.from({ length: 8 }).map((_, i) => (
+        <span
+          key={i}
+          className="absolute text-6xl sm:text-8xl font-bold text-gray-900 opacity-10 pointer-events-none animate-floating"
+          style={{
+            top: `${Math.random() * 100}vh`,
+            left: `${Math.random() * 100}vw`,
+            animationDelay: `${Math.random() * 5}s`,
+          }}
+        >
+          Ahsan Burki
+        </span>
+      ))}
+
       <div className="max-w-5xl w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:items-stretch gap-12">
         {/* Right Section (Text Content) */}
         <div ref={rightSectionRef} className="flex-1 text-left px-4 sm:px-0">
@@ -37,13 +51,31 @@ const About = () => {
             data-aos="fade-right"
             data-aos-delay="700"
           >
-            Hello and <span className="text-purple">Welcome!</span>
+            Hello, I'm <span className="text-purple">Ahsan Burki</span>
           </h1>
 
-          <div
-            className="mt-6 flex flex-col sm:flex-row gap-4 sm:gap-10 text-lg"
-            data-aos="fade-right"
+          <p
+            className="mt-4 text-md sm:text-lg text-gray leading-relaxed"
+            data-aos="fade-down"
             data-aos-delay="900"
+          >
+            A passionate{" "}
+            <span className="text-purple">Front-End Developer</span> who thrives
+            on building stunning, fast, and accessible web interfaces. I
+            specialize in crafting user-friendly digital experiences that are
+            interactive, efficient, and visually appealing.
+          </p>
+
+          <div
+            className="border-t border-purple my-6"
+            data-aos="fade-in"
+            data-aos-delay="700"
+          ></div>
+
+          <div
+            className="grid grid-cols-2 sm:flex gap-4 sm:gap-10 text-lg"
+            data-aos="fade-up"
+            data-aos-delay="1000"
           >
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 sm:gap-3 font-semibold">
@@ -57,10 +89,6 @@ const About = () => {
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 sm:gap-3 font-semibold">
-                <CircleUserRound className="text-purple" size={22} />
-                <span>Ahsan Burki</span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3 font-semibold">
                 <MapPin className="text-purple" size={22} />
                 <span>Islamabad, Pakistan</span>
               </div>
@@ -73,92 +101,70 @@ const About = () => {
             data-aos-delay="700"
           ></div>
 
-          <div
-            className="flex flex-col sm:flex-row gap-6 sm:gap-12"
-            data-aos="fade-up"
-            data-aos-delay="1000"
-          >
-            <div>
-              <h3 className="text-3xl sm:text-4xl font-bold text-purple-400 bg-gradient-to-r from-purple to-white text-transparent bg-clip-text">
-                3+
-              </h3>
-              <p className="text-md text-gray font-semibold">
-                Years Experience...
-              </p>
-            </div>
-            <div>
-              <h3 className="text-3xl sm:text-4xl font-bold text-purple-400 bg-gradient-to-r from-purple to-white text-transparent bg-clip-text">
-                50+
-              </h3>
-              <p className="text-md text-gray font-semibold">
-                Clients Worldwide...
-              </p>
-            </div>
-          </div>
-
-          <p
-            className="mt-6 text-md sm:text-lg text-gray leading-relaxed"
-            data-aos="fade-down"
-            data-aos-delay="1200"
-          >
-            Hello there! My name is{" "}
-            <span className="text-purple">Ahsan Burki</span>. I am a web
-            designer & developer, and I'm very passionate and dedicated to my
-            work.
-          </p>
-
-          <div
-            className="bg-gray-900 p-6 rounded-lg mt-6 shadow-lg"
-            data-aos="fade-in"
-            data-aos-delay="1400"
-          >
-            <p className="text-lg font-semibold text-white leading-tight">
-              <span className="text-3xl text-purple">“</span>Passionate about
-              turning designs into high-performance websites and applications. I
-              focus on intuitive user experiences, clean code, and innovative
-              solutions to help brands and businesses succeed online.
-              <span className="text-3xl text-purple">”</span>
-            </p>
-          </div>
-        </div>
-
-        {/* Left Section (Profile Image & CV) */}
-        <div
-          className="relative flex flex-col items-center gap-6 w-full sm:w-64 lg:w-80 flex-shrink-0"
-          style={{ height: rightSectionHeight }}
-        >
-          <div
-            className="relative w-full rounded-lg sm:rounded-full p-1 sm:p-2 bg-gradient-to-r from-purple to-blue"
-            data-aos="fade-up"
-            data-aos-delay="700"
-          >
-            <img
-              src={Profile}
-              alt="Ahsan Burki"
-              className="w-full h-auto object-cover shadow-lg rounded-lg sm:rounded-full"
-            />
-          </div>
-
-          <h1
-            className="mt-2 text-xl sm:text-2xl font-bold text-center bg-gradient-to-r from-purple to-white bg-clip-text text-transparent"
-            data-aos="fade-up"
-            data-aos-delay="900"
-          >
-            Ahsan Burki
-          </h1>
-
-          <a
-            href="/path-to-cv.pdf"
-            download="Ahsan_Burki_CV.pdf"
-            className="px-6 py-3 text-lg font-semibold text-white rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-purple to-blue flex items-center gap-2"
-            data-aos="fade-up"
+          <h2
+            className="text-2xl font-bold text-purple mb-4"
+            data-aos="fade-left"
             data-aos-delay="1100"
           >
-            <Download size={20} />
-            Download CV
-          </a>
+            Tech Stack & Tools
+          </h2>
+          <div
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-md text-gray font-semibold"
+            data-aos="fade-up"
+            data-aos-delay="1200"
+          >
+            {[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React",
+              "TailwindCSS",
+              "Bootstrap",
+              "EJS",
+              "Framer Motion",
+              "Magic UI",
+            ].map((tech, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 bg-gray-900 p-2 rounded-lg shadow-lg"
+              >
+                <Code className="text-purple" size={20} />
+                <span>{tech}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8" data-aos="fade-up" data-aos-delay="1300">
+            <a
+              href="/path-to-cv.pdf"
+              download="Ahsan_Burki_CV.pdf"
+              className="px-6 py-3 text-lg w-52 font-semibold text-white rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-purple to-blue flex items-center gap-2"
+            >
+              <Download size={20} />
+              Download CV
+            </a>
+          </div>
         </div>
       </div>
+
+      {/* Floating Animation */}
+      <style>{`
+        @keyframes floating {
+          0% {
+            transform: translateY(0px) translateX(0px);
+          }
+          50% {
+            transform: translateY(-20px) translateX(10px);
+          }
+          100% {
+            transform: translateY(0px) translateX(0px);
+          }
+        }
+
+        .animate-floating {
+          animation: floating 6s infinite ease-in-out alternate;
+        }
+      `}</style>
     </div>
   );
 };

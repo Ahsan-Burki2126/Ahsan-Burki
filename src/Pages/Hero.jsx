@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Phone, Mail, Facebook, Instagram, Dribbble } from "lucide-react";
-import { motion } from "framer-motion"; // Importing Framer Motion
+import { motion } from "framer-motion";
 import Profile from "../assets/Profile.png"; // Ensure correct image path
 
 const Hero = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-screen h-screen flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-b from-blue to-dark-blue text-white px-4 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24 font-mono overflow-hidden">
+    <section className="relative w-screen min-h-screen flex flex-col-reverse lg:flex-row items-center justify-between bg-gradient-to-b from-blue to-dark-blue text-white px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24 font-mono overflow-hidden">
       {/* Multiple Background Text for Layered Depth */}
       {["DESIGN", "CODE", "CREATE", "INNOVATE"].map((word, index) => (
         <motion.div
@@ -37,9 +37,21 @@ const Hero = () => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative flex-1 text-center lg:text-left"
+        className="relative flex-1 text-center lg:text-left flex flex-col justify-center"
       >
+        {/* Mobile-Only Engaging Intro */}
+        <p className="block lg:hidden text-md sm:text-lg text-gray-300 mb-2">
+          Hey there! 👋 Welcome to my space.
+        </p>
+        <p className="block lg:hidden text-xl sm:text-2xl font-semibold text-purple mb-2">
+          Looking for a creative mind?
+        </p>
+
         <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-wide leading-tight">
+          {/* Mobile-Only Unique Intro */}
+          <span className="block lg:hidden text-sm text-gray-400 mb-2">
+            You’ve just found one! 🚀
+          </span>
           HELLO, I'M
           <br />
           <span className="text-purple font-ubuntu">AHSAN</span> <br />
@@ -95,7 +107,7 @@ const Hero = () => {
         <motion.div
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center -z-0"
         >
           <div className="w-40 h-40 md:w-60 md:h-60 lg:w-96 lg:h-96 bg-gradient-to-br from-purple to-blue rounded-full opacity-70 -z-10"></div>
         </motion.div>
@@ -105,11 +117,11 @@ const Hero = () => {
           whileHover={{ scale: 1.05 }}
           src={Profile}
           alt="Ahsan Burki"
-          className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-auto lg:h-auto rounded-full object-cover floating-image"
+          className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-auto lg:h-auto rounded-full object-cover floating-image z-10"
         />
       </motion.div>
 
-      {/* Social Links - Styled & More Visible */}
+      {/* Social Links */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -138,19 +150,6 @@ const Hero = () => {
           <Facebook size={18} />
         </motion.a>
       </motion.div>
-
-      {/* Custom Styles */}
-      <style>{`
-        /* Floating Animation */
-        @keyframes floating {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-          100% { transform: translateY(0px); }
-        }
-        .floating-image {
-          animation: floating 3s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 };

@@ -10,7 +10,7 @@ const FooterNav = () => {
       <div className="h-16 lg:hidden"></div>
 
       {/* Mobile Navbar */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 h-16 py-3 px-4 flex justify-around items-center z-50 border-t border-gray-800 shadow-lg bg-dark-blue">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 h-16 py-2 px-4 flex justify-around items-center z-50 border-t border-gray-800 shadow-lg bg-dark-blue">
         {navbarData.map((item, index) => {
           // Assigning icons dynamically based on index (modify as needed)
           const icons = [Home, User, Briefcase, FileText, MessageSquare];
