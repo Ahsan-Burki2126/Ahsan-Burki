@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useForm as useReactHookForm } from "react-hook-form";
-import { useForm as useFormspree, ValidationError } from "@formspree/react";
+import { useForm } from "react-hook-form";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
-  useEffect(() => {
+  React.useEffect(() => {
     AOS.init({
       duration: 700,
       once: true,
@@ -18,36 +17,34 @@ const Contact = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useReactHookForm();
+  } = useForm();
 
-  const [state, handleFormspreeSubmit] = useFormspree("xyzegrpk");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const onSubmit = async (data) => {
-    await handleFormspreeSubmit(data);
-    if (state.succeeded) {
-      setFormSubmitted(true);
-      setTimeout(() => {
-        setFormSubmitted(false);
-        reset();
-      }, 3000);
-    }
+  const onSubmit = (data) => {
+    console.log("Form Data Submitted:", data);
+    setFormSubmitted(true);
+    setTimeout(() => {
+      setFormSubmitted(false);
+      reset();
+    }, 3000);
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-gradient-to-r from-blue to-dark-blue overflow-hidden font-mono">
+    <div className="w-full h-screen flex justify-center  items-center bg-gradient-to-r from-blue to-dark-blue overflow-hidden font-mono">
       <div className="max-w-6xl w-full h-full flex flex-col md:flex-row overflow-y-auto scrollbar-hide">
         {/* Left Side - Contact Info & Map */}
         <div
-          className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-center text-white"
+          className="w-full md:w-1/2  p-6 sm:p-8 flex flex-col justify-center  text-white"
           data-aos="zoom-in"
         >
-          <h2 className="text-3xl sm:text-4xl text-center lg:text-start font-bold relative before:absolute before:content-[''] before:w-12 before:h-1 before:bg-purple before:bottom-[-10px] before:left-1/2 mb-8 before:-translate-x-1/2 lg:before:left-0 lg:before:translate-x-0">
+          <h2 className="text-3xl mb-8 text-center lg:text-start sm:text-4xl font-bold relative before:content-[''] before:absolute lg:before:left-0 before:bottom-[-8px] before:w-12 before:h-1 before:bg-purple">
             REACH OUT TO ME
           </h2>
 
           {/* Contact Methods */}
           <div className="space-y-6">
+            {/* Email */}
             <div className="flex items-center gap-4 p-4 bg-gray-900 rounded-lg shadow-lg border border-white">
               <Mail size={24} className="text-purple" />
               <div>
@@ -57,15 +54,19 @@ const Contact = () => {
                 </p>
               </div>
             </div>
+
+            {/* Address */}
             <div className="flex items-center gap-4 p-4 bg-gray-900 rounded-lg shadow-lg border border-white">
               <MapPin size={24} className="text-purple" />
               <div>
                 <h3 className="text-lg font-semibold">Visit us</h3>
                 <p className="text-sm text-gray-400">
-                  Ali Hall, IUB, Bahawalpur, Pakistan
+                  Ali Hall ,Baghdad-ul-Jadeed Campus,IUB,Bahawalpur,Pakistan
                 </p>
               </div>
             </div>
+
+            {/* Phone */}
             <div className="flex items-center gap-4 p-4 bg-gray-900 rounded-lg shadow-lg border border-white">
               <Phone size={24} className="text-purple" />
               <div>
@@ -73,6 +74,19 @@ const Contact = () => {
                 <p className="text-sm text-gray-400">+92 312 9095755</p>
               </div>
             </div>
+          </div>
+
+          {/* Google Map */}
+          <div className="w-full h-40 sm:h-48 mt-6 rounded-lg overflow-hidden shadow-lg border border-white">
+            <iframe
+              title="Google Map"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6953.627921931864!2d71.751465!3d29.375736!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1741552854776!5m2!1sen!2sus"
+            ></iframe>
           </div>
         </div>
 
@@ -87,77 +101,87 @@ const Contact = () => {
           <p className="text-sm text-gray-300 mb-6">
             Tell us more about yourself and what you have in mind.
           </p>
+
           {formSubmitted && (
             <p className="text-green-400 text-sm mb-4">
               Message sent successfully!
             </p>
           )}
+
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-4"
           >
-            <input type="hidden" name="form-name" value="contact" />
+            {/* Name & Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs font-semibold">First Name</label>
                 <input
                   type="text"
                   {...register("name", { required: "Name is required" })}
-                  name="name"
-                  className="w-full px-4 py-2 mt-1 rounded-md bg-transparent border border-white text-white outline-none focus:ring-2 focus:ring-purple-300"
+                  className="w-full px-4 py-2 mt-1 rounded-md bg-transparent border border-white text-white outline-none focus:ring-2 focus:ring-purple-300 "
                 />
-                <ValidationError
-                  prefix="Name"
-                  field="name"
-                  errors={state.errors}
-                />
+                {errors.name && (
+                  <p className="text-red-400 text-xs mt-1">
+                    {errors.name.message}
+                  </p>
+                )}
               </div>
+
               <div>
                 <label className="text-xs font-semibold">Your Email</label>
                 <input
                   type="email"
-                  {...register("email", { required: "Email is required" })}
-                  name="email"
-                  className="w-full px-4 py-2 mt-1 rounded-md bg-transparent border border-white text-white outline-none focus:ring-2 focus:ring-purple-300"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: "Invalid email address",
+                    },
+                  })}
+                  className="w-full px-4 py-2 mt-1 rounded-md bg-transparent border border-white text-white outline-none focus:ring-2 focus:ring-purple-300 "
                 />
-                <ValidationError
-                  prefix="Email"
-                  field="email"
-                  errors={state.errors}
-                />
+                {errors.email && (
+                  <p className="text-red-400 text-xs mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
             </div>
+
+            {/* Subject */}
             <div>
               <label className="text-xs font-semibold">Subject</label>
               <input
                 type="text"
                 {...register("subject", { required: "Subject is required" })}
-                name="subject"
-                className="w-full px-4 py-2 mt-1 rounded-md bg-transparent border border-white text-white outline-none focus:ring-2 focus:ring-purple-300"
+                className="w-full px-4 py-2 mt-1 rounded-md bg-transparent border border-white text-white outline-none focus:ring-2 focus:ring-purple-300 "
               />
-              <ValidationError
-                prefix="Subject"
-                field="subject"
-                errors={state.errors}
-              />
+              {errors.subject && (
+                <p className="text-red-400 text-xs mt-1">
+                  {errors.subject.message}
+                </p>
+              )}
             </div>
+
+            {/* Message */}
             <div>
               <label className="text-xs font-semibold">Your Message</label>
               <textarea
                 {...register("message", { required: "Message is required" })}
-                name="message"
                 rows="4"
-                className="w-full px-4 py-2 mt-1 rounded-md bg-transparent border border-white text-white outline-none focus:ring-2 focus:ring-purple-300"
-              />
-              <ValidationError
-                prefix="Message"
-                field="message"
-                errors={state.errors}
-              />
+                className="w-full px-4 py-2 mt-1 rounded-md bg-transparent border border-white text-white outline-none focus:ring-2 focus:ring-purple-300 "
+              ></textarea>
+              {errors.message && (
+                <p className="text-red-400 text-xs mt-1">
+                  {errors.message.message}
+                </p>
+              )}
             </div>
+
+            {/* Submit Button */}
             <button
               type="submit"
-              disabled={state.submitting}
               className="w-full py-2 mt-2 text-white font-semibold rounded-lg bg-gradient-to-l from-blue to-dark-blue hover:from-dark-blue hover:to-blue transition-all duration-300"
             >
               Send Message
@@ -165,6 +189,17 @@ const Contact = () => {
           </form>
         </div>
       </div>
+
+      {/* Hide Scrollbars */}
+      <style>{`
+        ::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 };
