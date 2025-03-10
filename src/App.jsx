@@ -2,6 +2,7 @@ import Sidebar from "./components/sidebar";
 import Hero from "./Pages/Hero";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+// import Testimonials from "./Pages/Testimonials";
 import Services from "./Pages/Services";
 // import FooterNav from "./components/FooterNav";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/testimonial" element={<Projects />} />
         </Routes>
         {/* <FooterNav /> */}
       </div>
