@@ -69,51 +69,47 @@ const Projects = () => {
 
   return (
     <div className="bg-gradient-to-b from-blue to-dark-blue w-full min-h-screen flex flex-col justify-center items-center overflow-hidden font-mono">
-      {/* Scrollable Container */}
-      <div className="w-full max-h-[90vh] overflow-y-auto scrollbar-hide flex flex-col items-center">
-        {/* Page Title */}
-        <h1
-          className="text-3xl sm:text-5xl font-bold text-white font-mono my-8"
-          data-aos="zoom-in"
-        >
-          My <span className="text-purple">Projects</span>
-        </h1>
+      {/* Page Title */}
+      <h1
+        className="text-3xl sm:text-5xl font-bold text-white font-mono my-8"
+        data-aos="zoom-in"
+      >
+        My <span className="text-purple">Projects</span>
+      </h1>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              className="relative bg-dark-blue rounded-lg overflow-hidden shadow-md transform transition-transform duration-300 hover:scale-105"
-              data-aos={index % 2 === 0 ? "flip-up" : "zoom-in"}
-              style={{ width: "100%", maxWidth: "330px", margin: "auto" }}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-36 object-cover"
-              />
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full px-4 sm:px-8">
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            className="relative bg-dark-blue rounded-lg overflow-hidden shadow-md transform transition-transform duration-300 hover:scale-105"
+            data-aos={index % 2 === 0 ? "flip-up" : "zoom-in"}
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-36 object-cover"
+            />
 
-              <div className="p-4">
-                <h2 className="text-lg font-bold text-purple mb-1">
-                  {project.title}
-                </h2>
-                <p className="text-gray-400 text-xs mb-2">
-                  {project.description}
-                </p>
+            <div className="p-4">
+              <h2 className="text-lg font-bold text-purple mb-1">
+                {project.title}
+              </h2>
+              <p className="text-gray-400 text-xs mb-2">
+                {project.description}
+              </p>
 
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 text-xs font-semibold text-white rounded-lg shadow-md transition-all duration-300 bg-gradient-to-r from-purple to-blue hover:from-blue hover:to-purple"
-                >
-                  View Project
-                </a>
-              </div>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-4 py-2 text-xs font-semibold text-white rounded-lg shadow-md transition-all duration-300 bg-gradient-to-r from-purple to-blue hover:from-blue hover:to-purple"
+              >
+                View Project
+              </a>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
