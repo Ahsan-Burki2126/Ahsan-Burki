@@ -20,11 +20,11 @@ export const navbarData = [
     title: "Contact",
     link: "/contact",
   },
-  {
-    id: 5,
-    title: "Testimonials",
-    link: "/testimonials",
-  },
+  // {
+  //   id: 5,
+  //   title: "Testimonials",
+  //   link: "/testimonials",
+  // },
 ];
 
 export default navbarData;

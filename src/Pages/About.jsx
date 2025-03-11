@@ -43,9 +43,9 @@ const About = () => {
         </span>
       ))}
 
-      <div className="max-w-5xl w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:items-stretch gap-12">
+      <div className="max-w-5xl w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:items-stretch gap-12 ">
         {/* Right Section (Text Content) */}
-        <div ref={rightSectionRef} className="flex-1 text-left px-4 sm:px-0">
+        <div ref={rightSectionRef} className="flex-1 text-left px-4 sm:px-0 ">
           <h1
             className="text-4xl sm:text-6xl text-center lg:text-left font-bold font-mono"
             data-aos="fade-right"
@@ -55,7 +55,7 @@ const About = () => {
           </h1>
 
           <p
-            className="mt-4 text-md sm:text-lg text-gray leading-relaxed"
+            className="mt-4 text-md sm:text-lg text-gray leading-relaxed "
             data-aos="fade-down"
             data-aos-delay="900"
           >

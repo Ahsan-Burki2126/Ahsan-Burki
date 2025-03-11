@@ -9,6 +9,7 @@ import Services from "./Pages/Services";
 import CursorRing from "./components/CursorRing"; // Import CursorRing
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Projects from "./Pages/Projects";
+import Testimonials from "./Pages/Testimonials";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/testimonial" element={<Projects />} />
+          {/* <Route path="/testimonials" element={<Testimonials />} /> */}
         </Routes>
         {/* <FooterNav /> */}
       </div>
