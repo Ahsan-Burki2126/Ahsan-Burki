@@ -22,7 +22,7 @@ function Sidebar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed h-screen w-[80%] sm:w-[60%] md:w-[40%] lg:w-[20%] flex flex-col justify-between bg-dark-blue text-white pt-8 font-mono z-40 transition-all duration-300 ease-in-out
+        className={`fixed h-[100%] w-[80%] sm:w-[60%] md:w-[40%] lg:w-[20%] flex flex-col justify-between bg-dark-blue text-white pt-8 font-mono z-40 transition-all duration-300 ease-in-out
           ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           } lg:translate-x-0 lg:relative lg:flex lg:w-[20%] lg:min-h-screen`}
